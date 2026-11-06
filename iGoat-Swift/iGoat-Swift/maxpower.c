@@ -4268,6 +4268,9 @@ enum _1_sub_8_1_$op {
                 switch (*(_1_sub_9_4_$pc[0])) {
                     case _1_sub_9_4__BXor_int_int2int$right_STA_0$result_STA_0$left_STA_1: 
                         (_1_sub_9_4_$pc[0]) ++;
+                        if (_1_sub_9_4_$sp[0] < _1_sub_9_4_$stack[0] + 1) {
+                            return (0);
+                        }
                         (_1_sub_9_4_$sp[0] + -1)->_int = (_1_sub_9_4_$sp[0] + -1)->_int ^ (_1_sub_9_4_$sp[0] + 0)->_int;
                         (_1_sub_9_4_$sp[0]) --;
                         break;
@@ -4300,6 +4303,9 @@ enum _1_sub_8_1_$op {
                         break;
                     case _1_sub_9_4__store_int$left_STA_0$right_STA_1: 
                         (_1_sub_9_4_$pc[0]) ++;
+                        if (_1_sub_9_4_$sp[0] < _1_sub_9_4_$stack[0] + 2) {
+                            return (0);
+                        }
                         *((int *)(_1_sub_9_4_$sp[0] + 0)->_void_star) = (_1_sub_9_4_$sp[0] + -1)->_int;
                         _1_sub_9_4_$sp[0] += -2;
                         break;
@@ -4330,6 +4336,9 @@ enum _1_sub_8_1_$op {
                 switch (*(_1_sub_0_4_$pc[0])) {
                     case _1_sub_0_4__load_int$left_STA_0$result_STA_0: 
                         (_1_sub_0_4_$pc[0]) ++;
+                        if (_1_sub_0_4_$sp[0] < _1_sub_0_4_$stack[0]) {
+                            return 0;
+                        }
                         (_1_sub_0_4_$sp[0] + 0)->_int = *((int *)(_1_sub_0_4_$sp[0] + 0)->_void_star);
                         break;
                     case _1_sub_0_4__local$result_STA_0$value_LIT_0: 
@@ -4344,6 +4353,9 @@ enum _1_sub_8_1_$op {
                         break;
                     case _1_sub_0_4__store_int$left_STA_0$right_STA_1: 
                         (_1_sub_0_4_$pc[0]) ++;
+                        if (_1_sub_0_4_$sp[0] < _1_sub_0_4_$stack[0] + 1) {
+                            return 0;
+                        }
                         *((int *)(_1_sub_0_4_$sp[0] + 0)->_void_star) = (_1_sub_0_4_$sp[0] + -1)->_int;
                         _1_sub_0_4_$sp[0] += -2;
                         break;
