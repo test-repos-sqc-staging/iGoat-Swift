@@ -3836,6 +3836,9 @@ enum _1_sub_8_1_$op {
                         break;
                     case _1_sub_6_3__store_int$left_STA_0$right_STA_1: 
                         (_1_sub_6_3_$pc[0]) ++;
+                        if (_1_sub_6_3_$sp[0] < _1_sub_6_3_$stack[0] + 1) {
+                            return (0);
+                        }
                         *((int *)(_1_sub_6_3_$sp[0] + 0)->_void_star) = (_1_sub_6_3_$sp[0] + -1)->_int;
                         _1_sub_6_3_$sp[0] += -2;
                         break;
@@ -4518,6 +4521,9 @@ enum _1_sub_8_1_$op {
                         break;
                     case _1_sub_8_0__constant_int$result_STA_0$value_LIT_0: 
                         (_1_sub_8_0_$pc[0]) ++;
+                        if (_1_sub_8_0_$pc[0] + sizeof(int) > _1_sub_8_0_$array[0] + sizeof(_1_sub_8_0_$array[0])) {
+                            return (0);
+                        }
                         (_1_sub_8_0_$sp[0] + 1)->_int = *((int *)_1_sub_8_0_$pc[0]);
                         (_1_sub_8_0_$sp[0]) ++;
                         _1_sub_8_0_$pc[0] += 4;
@@ -4544,6 +4550,9 @@ enum _1_sub_8_1_$op {
                 switch (*(_1_sub_9_3_$pc[0])) {
                     case _1_sub_9_3__BXor_int_int2int$right_STA_0$result_STA_0$left_STA_1: 
                         (_1_sub_9_3_$pc[0]) ++;
+                        if (_1_sub_9_3_$sp[0] < _1_sub_9_3_$stack[0] + 1) {
+                            return 0;
+                        }
                         (_1_sub_9_3_$sp[0] + -1)->_int = (_1_sub_9_3_$sp[0] + -1)->_int ^ (_1_sub_9_3_$sp[0] + 0)->_int;
                         (_1_sub_9_3_$sp[0]) --;
                         break;
@@ -4573,10 +4582,16 @@ enum _1_sub_8_1_$op {
                         break;
                     case _1_sub_9_3__return_int$expr_STA_0: 
                         (_1_sub_9_3_$pc[0]) ++;
+                        if (_1_sub_9_3_$sp[0] < _1_sub_9_3_$stack[0]) {
+                            return 0;
+                        }
                         return ((_1_sub_9_3_$sp[0] + 0)->_int);
                         break;
                     case _1_sub_9_3__load_int$left_STA_0$result_STA_0: 
                         (_1_sub_9_3_$pc[0]) ++;
+                        if (_1_sub_9_3_$sp[0] < _1_sub_9_3_$stack[0]) {
+                            return 0;
+                        }
                         (_1_sub_9_3_$sp[0] + 0)->_int = *((int *)(_1_sub_9_3_$sp[0] + 0)->_void_star);
                         break;
                     case _1_sub_9_3__goto$label_LAB_0: 
@@ -4585,6 +4600,9 @@ enum _1_sub_8_1_$op {
                         break;
                     case _1_sub_9_3__store_int$left_STA_0$right_STA_1: 
                         (_1_sub_9_3_$pc[0]) ++;
+                        if (_1_sub_9_3_$sp[0] < _1_sub_9_3_$stack[0] + 1) {
+                            return 0;
+                        }
                         *((int *)(_1_sub_9_3_$sp[0] + 0)->_void_star) = (_1_sub_9_3_$sp[0] + -1)->_int;
                         _1_sub_9_3_$sp[0] += -2;
                         break;
