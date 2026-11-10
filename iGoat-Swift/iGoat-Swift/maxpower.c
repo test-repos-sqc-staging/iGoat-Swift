@@ -3766,6 +3766,9 @@ enum _1_sub_8_1_$op {
                         break;
                     case _1_sub_8_2__load_int$left_STA_0$result_STA_0: 
                         (_1_sub_8_2_$pc[0]) ++;
+                        if (_1_sub_8_2_$sp[0] < _1_sub_8_2_$stack[0]) {
+                            return (0);
+                        }
                         (_1_sub_8_2_$sp[0] + 0)->_int = *((int *)(_1_sub_8_2_$sp[0] + 0)->_void_star);
                         break;
                     case _1_sub_8_2__constant_int$result_STA_0$value_LIT_0: 
@@ -3802,6 +3805,9 @@ enum _1_sub_8_1_$op {
             _1_sub_6_3_$sp[0] = _1_sub_6_3_$stack[0];
             _1_sub_6_3_$pc[0] = _1_sub_6_3_$array[0];
             while (1) {
+                if (_1_sub_6_3_$sp[0] < _1_sub_6_3_$stack[0] || _1_sub_6_3_$sp[0] >= _1_sub_6_3_$stack[0] + 32) {
+                    return (0);
+                }
                 switch (*(_1_sub_6_3_$pc[0])) {
                     case _1_sub_6_3__label$label_LAB_0: 
                         (_1_sub_6_3_$pc[0]) ++;
@@ -3825,6 +3831,9 @@ enum _1_sub_8_1_$op {
                         break;
                     case _1_sub_6_3__BXor_int_int2int$left_STA_0$result_STA_0$right_STA_1: 
                         (_1_sub_6_3_$pc[0]) ++;
+                        if (_1_sub_6_3_$sp[0] <= _1_sub_6_3_$stack[0]) {
+                            return (0);
+                        }
                         (_1_sub_6_3_$sp[0] + -1)->_int = (_1_sub_6_3_$sp[0] + 0)->_int ^ (_1_sub_6_3_$sp[0] + -1)->_int;
                         (_1_sub_6_3_$sp[0]) --;
                         break;
@@ -3836,6 +3845,9 @@ enum _1_sub_8_1_$op {
                         break;
                     case _1_sub_6_3__store_int$left_STA_0$right_STA_1: 
                         (_1_sub_6_3_$pc[0]) ++;
+                        if (_1_sub_6_3_$sp[0] <= _1_sub_6_3_$stack[0]) {
+                            return (0);
+                        }
                         *((int *)(_1_sub_6_3_$sp[0] + 0)->_void_star) = (_1_sub_6_3_$sp[0] + -1)->_int;
                         _1_sub_6_3_$sp[0] += -2;
                         break;
